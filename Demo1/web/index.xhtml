@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Gym Soldiers</title>
+        <style>
+  
+            #login-panel{
+                width:500px;
+                margin:250px auto; 
+            }
+            #login-panel table{
+                border:1px solid #DDD;
+                padding:50px;
+            }
+            :focus{
+                outline: none;
+            }
+            #login-panel input[type='text'],#login-panel input[type='password']{
+                border: 1px solid #DDD;
+                padding: 3px;
+                font-size: 20px
+            }
+            #login-panel input[type='submit']{
+                border: 1px solid #DDD;
+                width: 100%;
+                padding: 3px;
+                background-color: green;
+                border-radius: 3px;
+                font-size: 20px;
+                color: black;
+                background-color: #ececce; 
+            }
+             #login-panel input[type='submit']:active{
+                background-color: activeborder;
+             }     
+        </style>
+    </h:head>
+    <body style = "background: url(image.jpeg); background-size: 100% 100%;" >
+        <h1 align="center"> LOGIN PAGE</h1>
+        <div id="login-panel">
+            <h:form>
+                <table>
+                    <tr>
+                        <td><h3>Username : </h3></td>
+                        <td>
+                            <p:inputText id="username"  value="#{personModel.username}"/>
+                            <h:message for="username"></h:message>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><h3>Password : </h3></td>
+                        <td>
+                             <p:password id="feedback" value="#{personModel.password}" feedback="true" />
+                         
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            
+                            <center><p:commandButton action="#{personModel.checkValidUser}" value="Login"  /></center>
+                            
+                           
+                        </td>
+                        
+                    </tr>
+                </table>
+            </h:form>  
+        </div>
+    </body>
+</html>
+
